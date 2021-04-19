@@ -1,24 +1,29 @@
-import React from 'react';
-import Task from '../task';
+import React from "react";
+import PropTypes from "prop-types";
 
+import Task from "../task";
 
-const TaskList = ({ todos, onDeleted, onCompleted }) => {
-    const elements = todos.map((item) => {
-        const { id, className, ...itemProps } = item;
-        return (
-            <li key={id} className={className}>
-                <Task {...itemProps} 
-                onCompleted={() => onCompleted(id) }
-                onDeleted={() => onDeleted(id)}/>  
-            </li>     
-        );
-    });
-   
-    return (
-        <ul className="todo-list">
-            { elements }
-        </ul>
-    );
+const TaskList = ({ todos }) => {
+  const elements = todos.map((item) => {
+    const { id, className, show } = item;
+    if (show) {
+      return (
+        <li key={id} className={className}>
+          <Task {...item} />
+        </li>
+      );
+    }
+    return null;
+  });
+
+  return <ul className="todo-list">{elements}</ul>;
+};
+TaskList.defaultProps = {
+  todos: [],
+};
+
+TaskList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default TaskList;

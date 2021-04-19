@@ -114,6 +114,13 @@ body {
 	z-index: 2;
 	border-top: 1px solid #e6e6e6;
 }
+.main p {
+	padding-left: 60px;
+	line-height: 1.2;
+	font-size: 24px;
+	font-weight: 400;
+	color: #4d4d4d;
+}
 
 .toggle-all {
 	width: 1px;
@@ -219,6 +226,7 @@ body {
 	padding: 15px 85px 15px 60px;
 }
 
+
 .todo-list li label .created {
 	font-size: 13px;
 	color: gray;
@@ -246,7 +254,7 @@ body {
 	height: 40px;
 	font-size: 34px;
 	color: #cc9a9a;
-	margin: auto 0 11px;
+	margin: 10px 0;
 	transition: color 0.2s ease-out;
 	cursor: pointer;
 }
@@ -279,6 +287,26 @@ body {
 .todo-list li.editing:last-child {
 	margin-bottom: -1px;
 }
+.timer {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 15px 15px 60px;
+	font-size: 13px;
+	color: gray;
+}
+.timer__wrap {
+	display: flex;
+	align-items: center;
+}
+.timer__toggle {
+	width: 20px;
+	height: 20px;
+	margin-left: 50px;
+}
+.timer__toggle img{
+	width: 100%;
+}
+
 
 .footer {
 	display: flex;
